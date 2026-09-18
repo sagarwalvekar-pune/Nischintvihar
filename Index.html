@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>निश्चिंत विहार | तुमचा विश्वासू प्रवास सोबती</title>
+    <meta name="description" content="निश्चिंत विहार - भारतातील सर्व वयोगटांसाठी आरामदायक, सुरक्षित आणि परवडणारे पर्यटन पॅकेजेस.">
+    
+    <!-- Google Fonts for Marathi -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables based on brochure colors */
+        :root {
+            --primary-orange: #e65c00;
+            --primary-blue: #0056b3;
+            --accent-green: #2e8b57;
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --bg-light: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mukta', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+        
+        .logo-subtext {
+            font-size: 0.9rem;
+            color: var(--primary-orange);
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #ffd700; /* Gold color */
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc5200;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .feature-card:nth-child(2) { border-top-color: var(--primary-orange); }
+        .feature-card:nth-child(3) { border-top-color: var(--accent-green); }
+        .feature-card:nth-child(4) { border-top-color: #dc3545; }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        /* Tour Details Section (NEW) */
+        .tours-section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .tours-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            display: inline-block;
+            border-bottom: 3px solid var(--primary-orange);
+            padding-bottom: 5px;
+        }
+
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        .tour-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .tour-info {
+            padding: 20px;
+        }
+
+        .tour-info h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .tour-info p {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .tour-info .btn-book {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: var(--accent-green);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .tour-info .btn-book:hover {
+            background-color: #1e6b3e;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            display: inline-block;
+            border-bottom: 3px solid var(--primary-orange);
+            padding-bottom: 5px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Booking Form Section (NEW) */
+        .booking-section {
+            background-color: #fff3e0; /* Light orange tint */
+            padding: 60px 20px;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .booking-container h2 {
+            text-align: center;
+            color: var(--primary-orange);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Mukta', sans-serif;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 5px rgba(0,86,179,0.3);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #004494;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .contact-person {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-person i {
+            color: var(--primary-orange);
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            background: white;
+            color: var(--primary-blue);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Instagram Floating Button */
+        .insta-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .insta-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 { font-size: 2.2rem; }
+            .hero h2 { font-size: 1.5rem; }
+            
+            .features {
+                margin-top: 20px;
+            }
+            
+            .booking-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <!-- IMPORTANT: Replace the src below with your actual logo file name, e.g., 'logo.png' -->
+                <img src="logo.png" alt="Nischint Vihar Logo" class="logo-img" style="background:white;" onerror="this.src='https://i.ibb.co/6P9Wk4z/logo-placeholder.png'">
+                <div>
+                    <div class="logo-text">निश्चिंत विहार</div>
+                    <div class="logo-subtext">चला निघूया, पर्यटन करूया !</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">मुख्यपृष्ठ</a></li>
+                    <li><a href="#tours">टूर्स</a></li>
+                    <li><a href="#gallery">गॅलरी</a></li>
+                    <li><a href="#booking">बुकिंग</a></li>
+                    <li><a href="#contact">संपर्क</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>चला निघूया...</h1>
+        <h2>पर्यटन करूया !</h2>
+        <p>भारतातील सर्व वयोगटांसाठी आरामदायक, सुरक्षित आणि परवडणारे पर्यटन पॅकेजेस. तुमच्या स्वप्नातील सहलीचे नियोजन आम्ही करतो.</p>
+        <a href="#booking" class="btn-primary">आता बुकिंग करा</a>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="feature-card">
+            <div class="feature-icon" style="color: var(--primary-blue);"><i class="fas fa-bus"></i></div>
+            <h3>Comfortable प्रवास...</h3>
+            <p>आरामदायी आणि सुरक्षित वाहनांमध्ये प्रवासाची हमी.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="color: var(--primary-orange);"><i class="fas fa-shield-alt"></i></div>
+            <h3>सुरक्षित व्यवस्था...</h3>
+            <p>तुमच्या सुरक्षेला आमची प्राथमिकता आहे.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="color: var(--accent-green);"><i class="fas fa-user-tie"></i></div>
+            <h3>अनुभवी मार्गदर्शक...</h3>
+            <p>प्रत्येक ठिकाणाची माहिती देणारे तज्ञ गाईड.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="color: #dc3545;"><i class="fas fa-tags"></i></div>
+            <h3>Affordable Packages...</h3>
+            <p>आणि आयुष्यभर लक्षात राहतील अशा आठवणी.</p>
+        </div>
+    </section>
+
+    <!-- TOUR DETAILS SECTION (EASY TO CUSTOMISE) -->
+    <section id="tours" class="tours-section">
+        <h2>आमचे पर्यटन पॅकेजेस</h2>
+        <div class="tour-grid">
+            
+            <!-- TOUR 1: Copy this entire block to add a new tour -->
+            <div class="tour-card">
+                <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80" alt="Himalayas Tour">
+                <div class="tour-info">
+                    <h3>हिमालय टूर (Himalayas)</h3>
+                    <p><strong>कालावधी:</strong> 7 दिवस / 6 रात्री</p>
+                    <p><strong>किंमत:</strong> ₹25,000 प्रति व्यक्ती</p>
+                    <p>थंड हवेची ठिकाणे, बर्फाच्छादित डोंगर आणि निसर्गाचा अप्रतिम नजारा.</p>
+                    <a href="#booking" class="btn-book">बुकिंग करा</a>
+                </div>
+            </div>
+
+            <!-- TOUR 2 -->
+            <div class="tour-card">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80" alt="Kerala Tour">
+                <div class="tour-info">
+                    <h3>केरळ टूर (Kerala)</h3>
+                    <p><strong>कालावधी:</strong> 5 दिवस / 4 रात्री</p>
+                    <p><strong>किंमत:</strong> ₹18,000 प्रति व्यक्ती</p>
+                    <p>निसर्गरम्य बॅकवॉटर्स, समुद्रकिनारे आणि आयुर्वेदिक स्पा.</p>
+                    <a href="#booking" class="btn-book">बुकिंग करा</a>
+                </div>
+            </div>
+
+            <!-- TOUR 3 -->
+            <div class="tour-card">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80" alt="Rajasthan Tour">
+                <div class="tour-info">
+                    <h3>राजस्थान टूर (Rajasthan)</h3>
+                    <p><strong>कालावधी:</strong> 6 दिवस / 5 रात्री</p>
+                    <p><strong>किंमत:</strong> ₹22,000 प्रति व्यक्ती</p>
+                    <p>ऐतिहासिक किल्ले, वाळवंट आणि राजेशाही संस्कृतीचा अनुभव.</p>
+                    <a href="#booking" class="btn-book">बुकिंग करा</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking-section">
+        <div class="booking-container">
+            <h2>बुकिंग / चौकशी फॉर्म</h2>
+            <p style="text-align: center; margin-bottom: 20px;">कृपया खालील माहिती भरा. आम्ही लवकरच तुमच्याशी संपर्क साधू.</p>
+            
+            <!-- The form uses mailto: to send the email directly to you -->
+            <form action="mailto:nishchintvihar@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">तुमचे नाव (Full Name) *</label>
+                    <input type="text" id="name" name="Name" required placeholder="उदा. राहुल पाटील">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">मोबाईल नंबर (Mobile Number) *</label>
+                    <input type="tel" id="phone" name="Phone" required placeholder="उदा. 9876543210">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">ईमेल (Email Address)</label>
+                    <input type="email" id="email" name="Email" placeholder="उदा. rahul@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tour">कोणती टूर निवडायची आहे? (Select Tour) *</label>
+                    <select id="tour" name="Tour" required>
+                        <option value="">-- टूर निवडा --</option>
+                        <option value="Himalayas">हिमालय टूर</option>
+                        <option value="Kerala">केरळ टूर</option>
+                        <option value="Rajasthan">राजस्थान टूर</option>
+                        <option value="Other">इतर (Other)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="people">एकूण व्यक्ती (Total People) *</label>
+                    <input type="number" id="people" name="People" min="1" required placeholder="उदा. 4">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">अतिरिक्त माहिती (Additional Message)</label>
+                    <textarea id="message" name="Message" placeholder="तुमच्या काही विशेष गरजा असल्यास येथे लिहा..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">चौकशी पाठवा (Submit Enquiry)</button>
+            </form>
+            <p style="font-size: 0.8rem; text-align: center; margin-top: 15px; color: #666;">* हा फॉर्म सबमिट केल्यावर तुमचा ईमेल ॲप उघडेल आणि माहिती आमच्याकडे पाठवली जाईल.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>आमचे काही आठवणीचे क्षण</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80" alt="Temple Tour"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80" alt="Himalayas Tour"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80" alt="Historical Tour"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1598321295732-1f6d5887e984?auto=format&fit=crop&w=800&q=80" alt="Desert Tour"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=800&q=80" alt="Beach Tour"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80" alt="Kerala Tour"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>आमच्याशी संपर्क साधा</h2>
+                <p>तुमच्या पुढील सहलीचे नियोजन करण्यासाठी आजच आम्हाला कॉल करा किंवा व्हाट्सएप करा.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-person"><i class="fas fa-user"></i> Hemant Mandmale: <a href="tel:7666846192" style="color:white;">7666846192</a></div>
+                    <div class="contact-person"><i class="fas fa-user"></i> Nishant Kulkarni: <a href="tel:9850504810" style="color:white;">9850504810</a></div>
+                    <div class="contact-person"><i class="fas fa-user"></i> Chetan Godbole: <a href="tel:8888591868" style="color:white;">8888591868</a></div>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h2>संपर्क माहिती</h2>
+                <!-- Instagram Link Added Here -->
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/nishchintvihar_tours/" target="_blank">nishchintvihar_tours</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:nishchintvihar@gmail.com">nishchintvihar@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>पुणे, महाराष्ट्र</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Instagram Button -->
+    <a href="https://www.instagram.com/nishchintvihar_tours/" class="insta-float" target="_blank" title="Follow us on Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 निश्चिंत विहार. सर्व हक्क राखीव. | Designed for Indian Tours</p>
+    </footer>
+
+</body>
+</html>
